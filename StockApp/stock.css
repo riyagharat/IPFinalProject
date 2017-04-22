@@ -1,5 +1,13 @@
 /* If you need to create specific css */
 body {
-	background-color: black;
-	color: white;
+	background-color:white;
+	color:black;
+	min-height:inherit;
+	display:flex;
+	align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+html {
+	height:auto;
 }
