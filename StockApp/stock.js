@@ -3,18 +3,17 @@ $(window).ready(function() {
 });
 
 function bindEventHandlers() {
-	$("#chartUpdate").click(function() {
-		updateChart();
+	$("#searchBar").keyup(function(e) {
+		if (e.keyCode == 13) {
+			doSearch();
+		}
+	});
+
+	$("#searchButton").click(function() {
+		doSearch();
 	});
 };
 
-function updateChart() {
-	var startDate = $("#startDate"),
-		endDate = $("#endDate"),
-		stockVal = $("#chartText"),
-		chartHolder = $("#chartContainer")
-
-	console.log(startDate.val());
-	console.log(endDate.val());
-	console.log(stockVal.val());
+function doSearch() {
+	console.log("searching");
 }
