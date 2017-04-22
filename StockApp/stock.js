@@ -15,8 +15,11 @@ function bindEventHandlers() {
 };
 
 function doSearch() {
-	console.log("searching");
+	// do search
+	// make list of results
+	// onclick run branon's method
 }
+
 function getStockQuote(symbol){
 
 	$.get({

@@ -36,6 +36,11 @@
 				</div>
 			</div>
 			<div class="row">
+				<div class="col-xs-12">
+					<div class="symbolContainer"></div>
+				</div>
+			</div>
+			<div class="row">
 				<!-- Enter things here -->
 			</div>
 			<div class="col-lg-6" id="stock" style="background-color: #EEE; border-radius: 5px; padding: 1em; display: none;">
