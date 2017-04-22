@@ -1,8 +1,11 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Stock App Login Page</title>
+		<title>Stock App</title>
 		<!-- Because jQuery.... -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<!-- Because bootstrap -->
@@ -13,27 +16,25 @@
 		<script src="stock.js"></script>
 	</head>
 	<body>
-    <div class="row">
-      <div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8">
-        <div class="input-group">
-          <form action="/Account/Login" method="post">
-            <div class="form-group">
-              <label for="username">Username</label>
-              <input class="form-control" id="username" placeholder="Username"></input>
-            </div>
-            <div class="form-group">
-              <label for="userpass">Password</label>
-              <input type="password" class="form-control" id="userpass" placeholder="Password"></input>
-            </div>
-          </div>
-          <br></br>
-          <div class="form-group">
-            <div class="col-xs-12 text-center">
-              <button type="submit" class="btn btn-primary btn-md">Login</button>
-            </div>
-          </div>
-        </form>
-      </div>
-  </div>
+		<?php
+		$_SESSION['inputName'] = $_POST['inputName'];
+		?>
+		<div class="container">
+			<div class="row">
+				<div class="jumbotron">
+					<h1><?php
+					echo "Hello, " . $_SESSION['inputName'];
+					?></h1>
+					<div class="col-lg-6">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search for...">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit">Go!</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
