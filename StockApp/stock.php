@@ -38,6 +38,14 @@
 			<div class="row">
 				<!-- Enter things here -->
 			</div>
+			<div class="col-lg-6" id="stock" style="background-color: #EEE; border-radius: 5px; padding: 1em; display: none;">
+				<h3 id="stockName"></h3>
+				<div id="stockLastPrice"></div>
+				<div id="stockChange"></div>
+				<div id="stockChangePercent"></div>
+				<div id="stockChangePercentYTD"></div>
+				<div id="stockLastTraded"></div>
+			</div>
 		</div>
 	</body>
 </html>
