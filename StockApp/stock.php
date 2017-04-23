@@ -36,7 +36,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="jumbotron">
-					<h1><?php
+					<h1 style="padding-left: 12px;"><?php
 					echo "Hello, " . $_SESSION['inputName'];
 					?>&nbsp;<a style="font-size: medium; vertical-align: middle;" href='./stock.php?change_name=1'>[Not You?]</a></h1>
 					<div class="col-lg-6">
