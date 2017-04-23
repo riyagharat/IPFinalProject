@@ -12,6 +12,10 @@ function bindEventHandlers() {
 	$("#searchButton").click(function() {
 		doSearch();
 	});
+
+	$("#symbolContainer").on("click", "tr", function() {
+		getStockQuote($(this).attr("data-symbol"));
+	})
 };
 
 function doSearch() {
