@@ -1,5 +1,22 @@
 <?php
 	session_start();
+
+	// if user is logging out, destroy session and redirect
+	if(isset($_GET['change_name'])){
+		$_SESSION['inputName'] = null;
+		header('Location: ./landing.html');
+	}
+
+	// check if user is customizing
+	if(isset($_POST['inputName'])){
+		$_SESSION['inputName'] = $_POST['inputName'];
+	}else{
+		// check if already customized, otherwise redirect
+		if(!isset($_SESSION['inputName'])){
+			header('Location: ./landing.html');
+		}
+	}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,15 +33,12 @@
 		<script src="stock.js"></script>
 	</head>
 	<body>
-		<?php
-		$_SESSION['inputName'] = $_POST['inputName'];
-		?>
 		<div class="container">
 			<div class="row">
 				<div class="jumbotron">
 					<h1><?php
 					echo "Hello, " . $_SESSION['inputName'];
-					?></h1>
+					?>&nbsp;<a style="font-size: medium; vertical-align: middle;" href='./stock.php?change_name=1'>[Not You?]</a></h1>
 					<div class="col-lg-6">
 						<div class="input-group">
 							<input type="text" class="form-control" id="searchBar" placeholder="Search for...">
