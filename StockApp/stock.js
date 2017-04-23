@@ -15,9 +15,24 @@ function bindEventHandlers() {
 };
 
 function doSearch() {
+	var searchField = $('#searchBar');
 	// do search
-	// make list of results
-	// onclick run branon's method
+	$.get({
+		data: {
+			input: $('#searchBar').val(),
+		},
+		dataType: "jsonp",
+		url: "http://dev.markitondemand.com/Api/v2/Lookup/jsonp",
+		complete: function(data){
+			if (data.responseJSON) {
+				showSearchResults(data.responseJSON);
+			}
+		}
+	});
+}
+
+function showSearchResults(json) {
+	var searchResults = $('#symbolContainer');
 }
 
 function getStockQuote(symbol){
