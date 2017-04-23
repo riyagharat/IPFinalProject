@@ -17,13 +17,21 @@
 	</head>
 	<body>
 		<?php
-		$_SESSION['inputName'] = $_POST['inputName'];
+			if (isset($_POST['inputName'])) {
+				$_SESSION['inputName'] = $_POST['inputName'];
+			}
+			if (isset($_SESSION['inputName'])) {
+				$name = $_SESSION['inputName'];
+			}
+			else {
+				$name = "You";
+			}
 		?>
 		<div class="container">
 			<div class="row">
 				<div class="jumbotron">
 					<h1><?php
-					echo "Hello, " . $_SESSION['inputName'];
+					echo "Hello, " . $name;
 					?></h1>
 					<div class="col-lg-6">
 						<div class="input-group">
@@ -37,7 +45,13 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<div class="symbolContainer"></div>
+					<div id="errorContainer" style="display: none;"><p></p></div>
+					<div id="symbolContainer"  style="display: none;">
+						<table class="table table-hover">
+							<tbody>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 			<div class="row">
