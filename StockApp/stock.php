@@ -49,7 +49,7 @@
 				<div class="jumbotron">
 					<h1><?php
 					echo "Hello, " . $name;
-					?></h1>
+					?>&nbsp;<a style="font-size: medium; vertical-align: middle;" href='./stock.php?change_name=1'>[Not You?]</a></h1>
 					<div class="col-lg-6 col-centered">
 						<div class="input-group">
 							<input type="text" class="form-control" id="searchBar" placeholder="Search for a Symbol">
