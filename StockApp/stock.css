@@ -7,7 +7,15 @@ body {
 	align-items: center;
   justify-content: center;
   padding: 1em;
+	background-image: url("abstract-mosaic-background.png");
+	background-size: 2000px 1100px;
+	background-repeat: no-repeat;
 }
+
+.enter-name {
+	color:white;
+}
+
 html {
 	height:auto;
 }
