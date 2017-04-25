@@ -12,14 +12,27 @@ body {
 	background-repeat: no-repeat;
 }
 
+h1 {
+	text-align: center;
+}
+
+html {
+	height:auto;
+}
+
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}	
+
+.jumbotron {
+	background-color:transparent !important;
+}
+
 .enter-name {
 	color:black;
 }
 
 .top-buffer {
 	margin-top: 220px;
-}
-
-html {
-	height:auto;
 }

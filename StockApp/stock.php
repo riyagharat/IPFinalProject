@@ -50,9 +50,9 @@
 					<h1><?php
 					echo "Hello, " . $name;
 					?></h1>
-					<div class="col-lg-6">
+					<div class="col-lg-6 col-centered">
 						<div class="input-group">
-							<input type="text" class="form-control" id="searchBar" placeholder="Search for...">
+							<input type="text" class="form-control" id="searchBar" placeholder="Search for a Symbol">
 							<span class="input-group-btn">
 								<button class="btn btn-default" id="searchButton" type="submit">Go!</button>
 							</span>
@@ -70,9 +70,6 @@
 						</table>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<!-- Enter things here -->
 			</div>
 			<div class="col-lg-6" id="stock" style="background-color: #EEE; border-radius: 5px; padding: 1em; display: none;">
 				<h3 id="stockName"></h3>
