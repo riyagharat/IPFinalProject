@@ -12,11 +12,56 @@ function bindEventHandlers() {
 	$("#searchButton").click(function() {
 		doSearch();
 	});
+
+	$("#symbolContainer").on("click", "tr", function() {
+		getStockQuote($(this).attr("data-symbol"));
+	})
 };
 
 function doSearch() {
-	console.log("searching");
+	var searchField = $('#searchBar');
+	// do search
+	$.get({
+		data: {
+			input: $('#searchBar').val(),
+		},
+		dataType: "jsonp",
+		url: "http://dev.markitondemand.com/Api/v2/Lookup/jsonp",
+		complete: function(data){
+			if (data.responseJSON) {
+				showSearchResults(data.responseJSON);
+			}
+		}
+	});
 }
+
+function showSearchResults(json) {
+	var stock,
+		error = $('#errorContainer'),
+		searchResults = $('#symbolContainer'),
+		table = searchResults.find("table"),
+		tableBody = table.find("tbody");
+
+	if (json.length > 0) {
+		error.hide();
+		tableBody.empty();
+		for (var i = json.length - 1; i >= 0; i--) {
+			symbol = json[i];
+			tableRow = $('<tr data-symbol=' + symbol.Symbol + '></tr>');
+			tableRow.append("<td>" + symbol.Name + "</td>");
+			tableRow.append("<td>" + symbol.Symbol + "</td>");
+			tableBody.append(tableRow);
+		}
+		searchResults.show();
+	}
+	else {
+		searchResults.hide();
+		error.empty();
+		error.text("No Search Results");
+		error.show();
+	}
+}
+
 function getStockQuote(symbol){
 
 	$.get({
@@ -62,9 +107,3 @@ function getStockQuote(symbol){
 		}
 	});
 }
-
-/* test purposes only
-$(document).ready(function(){
-	getStockQuote("AAPL");
-});
-*/

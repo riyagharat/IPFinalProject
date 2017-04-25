@@ -33,12 +33,23 @@
 		<script src="stock.js"></script>
 	</head>
 	<body>
+		<?php
+			if (isset($_POST['inputName'])) {
+				$_SESSION['inputName'] = $_POST['inputName'];
+			}
+			if (isset($_SESSION['inputName'])) {
+				$name = $_SESSION['inputName'];
+			}
+			else {
+				$name = "You";
+			}
+		?>
 		<div class="container">
 			<div class="row">
 				<div class="jumbotron">
-					<h1 style="padding-left: 12px;"><?php
-					echo "Hello, " . $_SESSION['inputName'];
-					?>&nbsp;<a style="font-size: medium; vertical-align: middle;" href='./stock.php?change_name=1'>[Not You?]</a></h1>
+					<h1><?php
+					echo "Hello, " . $name;
+					?></h1>
 					<div class="col-lg-6">
 						<div class="input-group">
 							<input type="text" class="form-control" id="searchBar" placeholder="Search for...">
@@ -46,6 +57,17 @@
 								<button class="btn btn-default" id="searchButton" type="submit">Go!</button>
 							</span>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="errorContainer" style="display: none;"><p></p></div>
+					<div id="symbolContainer"  style="display: none;">
+						<table class="table table-hover">
+							<tbody>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
