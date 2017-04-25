@@ -16,6 +16,10 @@ body {
 	color:white;
 }
 
+.top-buffer {
+	margin-top: 220px;
+}
+
 html {
 	height:auto;
 }
