@@ -58,6 +58,10 @@
 							</span>
 						</div>
 					</div>
+					<div class="col-lg-6 col-centered">
+						<p></p>
+						<p> Welcome to the Stock Ticker Application, search for a symbol. </p>
+					</div>
 				</div>
 			</div>
 			<div class="row">
@@ -71,7 +75,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-6" id="stock" style="background-color: #EEE; border-radius: 5px; padding: 1em; display: none;">
+			<div class="col-lg-6 col-centered" id="stock" style="background-color: #EEE; border-radius: 5px; padding: 1em; display: none;">
 				<h3 id="stockName"></h3>
 				<div id="stockLastPrice"></div>
 				<div id="stockChange"></div>
