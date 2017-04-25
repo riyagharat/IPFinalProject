@@ -1,4 +1,5 @@
 /* If you need to create specific css */
+/* modifies the body of the pages */
 body {
 	background-color:white;
 	color:black;
@@ -12,12 +13,50 @@ body {
 	background-repeat: no-repeat;
 }
 
+/*Aligns the hello name text center*/
 h1 {
 	text-align: center;
 }
 
 html {
 	height:auto;
+}
+
+#stock {
+
+}
+
+#stockName {
+	border-bottom: 2px solid #808080;
+  color: #808080;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding-bottom: 0.5em;
+}
+
+#stockLastPrice {
+	font-size: 14px;
+  color: #228b22;
+}
+
+#stockChange {
+	font-size: 14px;
+	color: #000000;
+}
+
+#stockChangePercent {
+	font-size: 14px;
+	color: #000000;
+}
+
+#stockChangePercentYTD {
+	font-size: 14px;
+	color: #000000;
+}
+
+#stockLastTraded {
+	font-size: 14px;
+	color: #000000;
 }
 
 .jumbotron p{
